@@ -8,7 +8,7 @@ Here, I explore data through hands-on projects, original analyses, and playful e
 
 "Jiaology" is a branch of my adventure concerned with my personal growth and skillset. It describes the variety of my knowledge landscape, defines the depth of my knowledgebase, and measures the altitude of my personal potential.
 
-My name is Chuanjun Jiao, as also know as Charles Jiao. I enjoy acquiring new skills and enriching my experience. I hope I can make a difference on the world. (Talk about sports, prediction, automation.)
+My name is Chuanjun Jiao, also known as Charles Jiao. I hold a Master of Science degree in Chemical Engineering and currently work in the medicinal chemistry industry, focusing on instrument product management. I'm an adventurer who is crazy about sports and finds joy in nature. My journey has led me to an unexpected yet perfectly fitting enthusiasm for data science — as we set out to unveil the big bang of "Datanova."
 
 ## About "Datanova"?
 
