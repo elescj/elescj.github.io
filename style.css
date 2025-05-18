@@ -21,3 +21,13 @@ nav a {
   text-decoration: none;
   color: #0066cc;
 }
+
+.banner {
+  background-image: url('banner.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  height: 200px; /* Or 250-300px for more impact */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 50, 0.6);
+}
