@@ -1,35 +1,45 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  color: #0066cc;
-  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
+  background-color: #0b0c10;
+  color: #cbd3ec;
+  line-height: 1.6;
 }
 
 nav {
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #1f1f2e, #2d2d44);
+  padding: 12px;
   text-align: center;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2e3d59;
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 20px;
   text-decoration: none;
-  color: #0066cc;
+  color: #8ecaff;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-<style>
-  .banner {
-    background-image: url('jiaology.png');
-    background-size: cover;
-    background-position: center;
-    height: 250px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 50, 0.6);
-  }
-</style>
+nav a:hover {
+  color: #e0b3ff;
+  text-shadow: 0 0 5px #e0b3ff;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 0 0 10px #8ecaff;
+}
+
+.banner {
+  background-image: url('jiaology.png'); /* or whatever the file is called */
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 10px;
+  margin: 30px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 50, 0.6);
+}
