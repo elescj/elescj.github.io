@@ -30,7 +30,7 @@ from datetime import datetime
 
 ### PARAMETERS ###
 # Get SerpApi API key.
-SERPAPI_KEY = "01f35978095e9e4e441c15ce0da63050bba53a4a998670ae448daef9ac135168"
+SERPAPI_KEY = "personal-license"
 # Get SerApi license key.
 LENS_API_KEY = "xxxxxxxxx"
 # Set key word.
