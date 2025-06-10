@@ -1,4 +1,4 @@
-# ElectraSyn Literature Mining Automation Project
+# ElectraSyn Literature Mining Automation from Google Scholar
 
 ElectraSyn, the product I manage at IKA, is a synthetic electrochemical platform that enables scientists to carry out chemical reactions. In academic research, it is standard practice to document experimental procedures in detail—including the brand and model of key instruments and their operating parameters. As a result, hundreds of published papers mention the use of ElectraSyn.
 
