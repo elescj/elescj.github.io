@@ -26,10 +26,9 @@ from datetime import datetime
 
 ### PARAMETERS ###
 # Get SerpApi API key.
-SERPAPI_KEY = "01f35978095e9e4e441c15ce0da63050bba53a4a998670ae448daef9ac135168" # Personal key
-SERPAPI_KEY = "42c510565cb68f0e659192598cc5ffd0de483128ef6588cd43766f569b7dbdc7" # charles.jiao@ika.net key
+SERPAPI_KEY = "your_key"
 # Get SerApi license key.
-LENS_API_KEY = "xWloyzMKGx1M8dRVFBMs06VuK8Nr3MnnOwGC4cUXzEOmIXHh1VnE"
+LENS_API_KEY = "your_key"
 # Set key word.
 query = "ElectraSyn 2.0"
 # Decide the searching time span.
