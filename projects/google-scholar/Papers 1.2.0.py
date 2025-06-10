@@ -8,18 +8,14 @@ Find papers using ElectraSyn from Google Scholar.
 Version history
 1.0.0       Search for a specific quantity of publications using scholarly.
 1.1.0       Use serpapi because scholarly is blocked by Google.
-1.2.0       xxxxxxxxxxxxxxxxxxxx
+1.2.0       Change the data type of collect_electrasyn_publications()'s output to DataFrame.
+            Add Lens.org metadata enrichment using paper title.
 
 @author: cj
 """
 
-# TODO
-"""
-√ Enrich datasheet information: published year.
-√ Sort by recency.
-* Enrich other datasheet information.
-"""
 
+import pandas as pd
 import requests
 import xlsxwriter
 import time
@@ -30,16 +26,17 @@ from datetime import datetime
 
 ### PARAMETERS ###
 # Get SerpApi API key.
-SERPAPI_KEY = "personal-license"
+SERPAPI_KEY = "01f35978095e9e4e441c15ce0da63050bba53a4a998670ae448daef9ac135168" # Personal key
+SERPAPI_KEY = "42c510565cb68f0e659192598cc5ffd0de483128ef6588cd43766f569b7dbdc7" # charles.jiao@ika.net key
 # Get SerApi license key.
-LENS_API_KEY = "xxxxxxxxx"
+LENS_API_KEY = "xWloyzMKGx1M8dRVFBMs06VuK8Nr3MnnOwGC4cUXzEOmIXHh1VnE"
 # Set key word.
 query = "ElectraSyn 2.0"
 # Decide the searching time span.
-year_from = 2024
+year_from = 2017
 year_to = 2025
 # Decide the maximum number of search results.
-num_results = 10
+num_results = 100000
 # Get current date & time.
 now = datetime.now()
 # Format as string: YYYYMMDD_HHMMSS
@@ -108,52 +105,58 @@ def fetch_google_scholar_results(query, year_from, year_to, num_results):
     return all_results
 
  
-
-# def fetch_lens_metadata(title, lens_api_key):
-#     """
+def fetch_lens_metadata(title, api_key):
+    """
     
 
+    Parameters
+    ----------
+    title : str
+        Title of the paper.
+    api_key : str
+        Lens API key.
 
-#     """
-#     # Set the HTTP request headers
-#     headers = {
-#         # Set authorization header with the Lens API key.
-#         "Authorization": f"Bearer {lens_api_key}",
-#         # Specify the content type as JSON.
-#         "Content-Type": "application/json"
-#         }
-#     # Prepare the query body to search for publications that match the given title.
-#     body = {
-#         "query": {
-#             "bool": {
-#                 "must": [
-#                     {"match_phrase": {"title": title}}  # Match the exact phrase in the title
-#                 ]
-#             }
-#         },
-#         "size": 1  # Limit the results to 1 publication
-#     }
-#     # Send the POST request to the Lens.org API with the specified headers and body.
-#     response = requests.post("https://api.lens.org/scholarly/search", headers=headers, json=body)
-#     # Check if the request fails (status code other than 200).
-#     if response.status_code != 200:
-#         # Return an empty dictionary.
-#         return {}
-#     # Parse the JSON response to get the 'data' field.
-#     results = response.json().get("data", [])
-#     # Return the first result if any results are found, otherwise return an empty dictionary.
-#     return results[0] if results else {}
+    Returns
+    -------
+    dict
+        Enriched data.
+
+    """
+    # Set up the request headers including the Lens API key for authorization.
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    # Define the body of the POST request using a boolean query with match_phrase on the title.
+    body = {
+        "query": {
+            "bool": {
+                "must": [
+                    {"match_phrase": {"title": title}}
+                ]
+            }
+        },
+        "size": 1  # Limit the number of search results to 1 (we only want the best match)
+    }
+    # Send the POST request to the Lens Scholarly API.
+    response = requests.post("https://api.lens.org/scholarly/search", headers=headers, json=body)
+    # Check if the request was successful.
+    if response.status_code != 200:
+        # Print an error message if the API response indicates failure.
+        print(f"Lens API error for title: {title}")
+        return {}
+    # Parse the JSON response and get the list of results under "data".
+    results = response.json().get("data", [])
+    # Return the first result if any are found; otherwise, return an empty dictionary.
+    return results[0] if results else {}
 
 
 
 def collect_electrasyn_publications():
     """
-    Collect  a list of papers and their information.
+    Collect a list of papers and their information.
 
     Returns
     -------
-    papers : list
-        DESCRIPTION.
+    papers : pandas.core.frame.DataFrame
+        A list of papers with their information.
 
     """
     
@@ -176,49 +179,61 @@ def collect_electrasyn_publications():
         # If author information is unavailable.
         else:
             authors = "Unknown"
-        
         # Get the summary of publication information.
         summary = result.get("publication_info", {}).get("summary", "")
         # Initialize default journal information.
         journal_info = "Unknown"
         # Initialize default publication year.
         publication_year = "Unknown"
-        # Iterate each publication's summary.
-        if summary:
-            # Is summary is connected by "-".
-            if " - " in summary:
-                # Break down summary into parts.
-                parts = summary.split(" - ")
-                # If journal information is in summary (more than two parts).
-                if len(parts) >= 2:
-                    # Set journal information properly.
-                    journal_info = parts[1].split(",")[0].strip()
-                    # Get information (that contains month) after comma.
-                    publication_year = parts[1].split(",")[-1].strip()
-                    print(summary)
-                    print(parts)
-                    print(publication_year)
-                    print(journal_info)
-                    print()
+        # Iterate each publication's summary that has "-".
+        if summary and " - " in summary:
+            # Break down summary into parts.
+            parts = summary.split(" - ")
+            # If journal information is in summary (more than two parts).
+            if len(parts) >= 2:
+                # Set journal information properly.
+                journal_info = parts[1].split(",")[0].strip()
+                # Get information (that contains month) after comma.
+                publication_year = parts[1].split(",")[-1].strip()
 
-        # # Enrich the metadata of search results.
-        # lens_data = fetch_lens_metadata(title, LENS_API_KEY)
-        # Avoid rate limiting.
-        time.sleep(1)
-        # # I suspect Chat made a mistake. Keep it until proven wrong
-        # countries = set()
-        # organizations = set()
-        # research_fields = set()
-        # for author in lens_data.get("authors", []):
-        #     for aff in author.get("affiliations", []):
-        #         if aff.get("country"):
-        #             countries.add(aff["country"])
-        #         if aff.get("name"):
-        #             organizations.add(aff["name"])
-        # for field in lens_data.get("fields_of_study", []):
-        #     research_fields.add(field)
-
-        # Add this paper to the list.
+        # Fetch additional metadata from the Lens API based on the paper title.
+        lens_data = fetch_lens_metadata(title, LENS_API_KEY)
+        # Attempt to extract the full publication date from the metadata.
+        publication_date = lens_data.get("publication_date", "Unknown")        
+        # Default the publication month to "Unknown" unless we can parse it.
+        publication_month = "Unknown"
+        # Iterate aeach vailable publication date.
+        if publication_date and publication_date != "Unknown":
+            try:
+                # Parse the date string and extract the full month name (e.g., "March")
+                publication_month = datetime.strptime(publication_date, "%Y-%m-%d").strftime("%B")
+            except:
+                # Silently ignore parsing errors and leave month as "Unknown"
+                pass
+        # Initialize sets to store unique country codes.
+        countries = set()
+        # Initialize sets to store unique city names.
+        cities = set()
+        # Initialize sets to store unique institution names from authors' affiliations.
+        institutions = set()
+        # Iterate each author listed in the metadata.
+        for author in lens_data.get("authors", []):
+            # Iterate through each author's list of affiliations.
+            for aff in author.get("affiliations", []):
+                # If country code is available, add it to the countries set.
+                if aff.get("country_code"):
+                    countries.add(aff["country_code"])
+                # If city name is available, add it to the cities set.
+                if aff.get("city"):
+                    cities.add(aff["city"])
+                # If institution name is available, add it to the institutions set.
+                if aff.get("name"):
+                    institutions.add(aff["name"])
+        # Extract the list of fields of study if present, otherwise use an empty list.
+        fields_of_study = lens_data.get("fields_of_study", [])
+        # Extract the abstract text if available, otherwise use an empty string.
+        abstract = lens_data.get("abstract", "")
+        # Add this paper and its information.
         papers.append({
             # Get the title of the paper.
             "Title": title,
@@ -228,16 +243,24 @@ def collect_electrasyn_publications():
             "Journal": journal_info,
             # Get the year when the paper was published.
             "Year": publication_year,
+            # Get the month when the paper was published.
+            "Month": publication_month,
             # Get the link to the paper.
             "Link": link,
-            # # Get the countries where the authors are in.
-            # "Countries": "; ".join(sorted(countries)) if countries else "Unknown",
-            # # Get the countries where the authors belong to.
-            # "Organizations": "; ".join(sorted(organizations)) if organizations else "Unknown",
-            # # Get the research field of this paper.
-            # "Research Fields": "; ".join(sorted(research_fields)) if research_fields else "Unknown"
+            # Get the country where author's institution is.
+            "Country": "; ".join(sorted(countries)) if countries else "Unknown",
+            # Get the city where author's institution is.
+            "City": "; ".join(sorted(cities)) if cities else "Unknown",
+            # Get the institute name.
+            "Institutions": "; ".join(sorted(institutions)) if institutions else "Unknown",
+            # Get the application.
+            "Applications": "; ".join(fields_of_study) if fields_of_study else abstract[:200]
         })
-
+    # Convert to DataFrame.
+    papers = pd.DataFrame(papers)
+    # Sort the DataFrame.
+    papers = papers.sort_values(by='Year', ascending=False)
+    
     return papers
 
 
@@ -248,8 +271,8 @@ def save_to_xlsx(data, filename):
 
     Parameters
     ----------
-    data : list
-        A list of papers and their information.
+    data : pandas.core.frame.DataFrame
+        A list of papers with their information.
     filename : str
         The name of the output file.
 
@@ -259,25 +282,12 @@ def save_to_xlsx(data, filename):
 
     """
     # If there is no data.
-    if not data:
-        # Print warning message.
+    if data.empty:
+        # Print warning.
         print("No data to write.")
         return
-    # Create an Excel workbook.
-    workbook = xlsxwriter.Workbook(filename)
-    # Add a worksheet.
-    worksheet = workbook.add_worksheet()
-    # Get the headers from the first dictionary.
-    headers = list(data[0].keys())
-    # Write the header row.
-    for col_num, header in enumerate(headers):
-        worksheet.write(0, col_num, header)
-    # Write the data rows.
-    for row_num, entry in enumerate(data, start=1):
-        for col_num, key in enumerate(headers):
-            worksheet.write(row_num, col_num, entry.get(key))
-    # Close the workbook.
-    workbook.close()
+    # Save DataFrame to Excel
+    data.to_excel(filename, index=False)
     # Print confirmation.
     print(f"Data saved to {filename}.")
 
@@ -303,7 +313,6 @@ def write_a_memo():
 
 def main():
     papers = collect_electrasyn_publications()
-    papers.sort(key=lambda x: int(x["Year"]) if x["Year"].isdigit() else 0, reverse=True)
     save_to_xlsx(papers, filepath+'.xlsx')
     write_a_memo()
 
