@@ -101,8 +101,8 @@ To assess the model assumptions and quality of fit, the following plots were ana
 
 <sub>Add charts here if using Jupyter or image links:</sub>
 
+**Example code (matplotlib)**
 ```python
-# Example code (matplotlib)
 # Plot histogram of residuals.
 sns.histplot(residuals, kde=True)
 # Show the plot.
