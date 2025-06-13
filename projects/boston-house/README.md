@@ -69,6 +69,7 @@ The linear regression model was evaluated using standard regression metrics on t
 | RMSE (Root Mean Squared Error)            | 0.198045          |
 | MAE (Mean Absolute Error)                 | 0.151284          |
 | MAPE (Mean Absolute Percentage Error)     | 5.257965          |
+
 These results indicate that the model explains approximately 73% of the variance in housing prices and has an average error of 23%.
 
 ---
@@ -86,6 +87,7 @@ Below are the learned coefficients for each feature in the model:
 | RAD       | +0.0078     | Higher accessibility to highways slightly increases price |
 | PTRATIO   | -0.0485     | Higher student–teacher ratio reduces price            |
 | LSTAT     | -0.0293     | Higher % of lower status population decreases price   |
+
 *Note: The magnitude and sign of coefficients indicate each feature’s relative impact.*
 
 ---
