@@ -4,11 +4,11 @@ A one-line summary.
 - [Overview](#overview)
 - [Dataset](#dataset)
 - [Problem Statement](problem-statement)
-## 🔎 Methodlogy
-## 📈 Results
-## 💡 Insights & Recommendations
-## ⚙️ Technologies Used
-## ▶️ How to Run
+- [Methodlogy](methodology)
+- [Results](results)
+- [Insights & Recommendations](insights-&-recommendations)
+- [Technologies Used](technologies-used)
+- [How to Run](how-to-run)
 
 ## 🧠 Overview
 ## 📊 Dataset
