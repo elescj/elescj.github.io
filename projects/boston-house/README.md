@@ -100,6 +100,9 @@ To assess the model assumptions and quality of fit, the following plots were ana
 - ✅ **Actual vs. Predicted** plot (for overall fit)
 
 <sub>Add charts here if using Jupyter or image links:</sub>
+![Residuals vs. Fitted Values](residual.png)
+![Histogram of Residuals](histogram.png)
+![QQ Plot](qq-plot.png)
 
 **Example code (matplotlib)**
 ```python
