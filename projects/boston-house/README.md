@@ -111,7 +111,7 @@ plt.show()
 stats.probplot(residuals, dist = "norm", plot = pylab)
 # Show the plot.
 plt.show()
-
+```
 
 ## 💡 Insights & Recommendations
 What did you learn? What actions can be taken?
