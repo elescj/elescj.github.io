@@ -15,7 +15,24 @@ This project applies linear regression to forecast Boston housing prices based o
 This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. It models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2. The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
 
 ## 📊 Dataset
-Description of the Boston housing dataset...
+Each record in the database describes a house in Boston suburb or town. The data was drawn from the Boston Standard Metropolitan Statistical Area (SMSA) in 1970. Detailed attribute information can be found below:
+
+Attribute Information:
+| Feature   | Description                                                                 |
+|-----------|-----------------------------------------------------------------------------|
+| `CRIM`    | Per capita crime rate by town                                               |
+| `ZN`      | Proportion of residential land zoned for lots over 25,000 sq.ft.           |
+| `INDUS`   | Proportion of non-retail business acres per town                            |
+| `CHAS`    | Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)       |
+| `NOX`     | Nitric Oxide concentration (parts per 10 million)                          |
+| `RM`      | The average number of rooms per dwelling                                    |
+| `AGE`     | Proportion of owner-occupied units built before 1940                        |
+| `DIS`     | Weighted distances to five Boston employment centers                        |
+| `RAD`     | Index of accessibility to radial highways                                   |
+| `TAX`     | Full-value property-tax rate per $10,000                                    |
+| `PTRATIO` | Pupil-teacher ratio by town                                                 |
+| `LSTAT`   | Percentage of lower status population                                       |
+| `MEDV`    | Median value of owner-occupied homes in $1000s (target variable)            |
 
 ## ❓ Problem Statement
 Accurately estimating housing prices is a persistent challenge due to the numerous and often interrelated factors that influence real estate markets — particularly the issue of multicollinearity among predictors. This project aims to develop a linear regression model to predict housing prices in Boston using key features from the dataset. The objective is to minimize prediction error while identifying the most influential variables, offering a foundational, interpretable baseline for housing price modeling and further machine learning applications.
