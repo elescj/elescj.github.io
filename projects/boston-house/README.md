@@ -12,7 +12,7 @@ Short project description.
 - [Contributing](#contributing)
 - [License](#license)
 
-## About
+## 📌 About
 
 This project is...
 
