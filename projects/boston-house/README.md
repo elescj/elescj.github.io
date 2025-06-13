@@ -40,7 +40,25 @@ Detailed feature descriptions are listed in the table below:
 Accurately estimating housing prices is a persistent challenge due to the numerous and often interrelated factors that influence real estate markets — particularly the issue of multicollinearity among predictors. This project aims to develop a linear regression model to predict housing prices in Boston using key features from the dataset. The objective is to minimize prediction error while identifying the most influential variables, offering a foundational, interpretable baseline for housing price modeling and further machine learning applications.
 
 ## 🔎 Methodology
-Steps of data cleaning, model building, evaluation...
+The following steps outline the end-to-end process used in this project:
+
+1. **Data Overview**  
+   The Boston Housing dataset was loaded into a pandas DataFrame for preliminary inspection. Key characteristics such as data dimensions, data types, presence of duplicates or null values, and the number of unique values per feature were assessed.
+
+2. **Exploratory Data Analysis (EDA)**  
+   - **Univariate analysis** was conducted to understand the distribution of each feature using histograms and descriptive statistics.  
+   - **Bivariate analysis** explored relationships between independent variables and the target (`MEDV`) using scatter plots and correlation heatmaps, helping to identify potential multicollinearity and feature relevance.
+
+3. **Model Building – Linear Regression**  
+   - Split the dataset into training and testing sets (typically 80/20).  
+   - Examined multicollinearity using correlation matrices and VIF; dropped highly collinear features.  
+   - Built an initial linear regression model and evaluated coefficient significance.  
+   - Removed statistically insignificant variables to improve model interpretability and re-fit the model.  
+   - Verified linear regression assumptions (linearity, normality, homoscedasticity, independence).  
+   - Evaluated model performance using **Root Mean Squared Error (RMSE)**, **Mean Absolute Error (MAE)**, and **Mean Absolute Percentage Error (MAPE)**.  
+   - Applied **k-fold cross-validation** to assess model generalizability.  
+   - Constructed the final linear regression model based on refined features and evaluation metrics.
+
 
 ## 📈 Results
 Key performance metrics, accuracy, visuals...
