@@ -12,10 +12,10 @@ This project applies linear regression to forecast Boston housing prices based o
 - [How to Run](#how-to-run)
 
 ## 🧠 Overview
-This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. It models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2. The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
+This project implements a supervised machine learning pipeline to predict housing prices in the Boston metropolitan area, leveraging linear regression to model the relationship between property prices and a range of features such as crime rate, room count, and highway access.
 
 ## 📊 Dataset
-The data and problem were provided by the *Applied Data Science Program* by MIT. The dataset is a **506 × 13** CSV file, where each row represents a residential property in a suburb or town of Boston. It was originally drawn from the **Boston Standard Metropolitan Statistical Area (SMSA) in 1970**.
+This dataset was originally provided as part of the *Applied Data Science Program* by MIT. The dataset is a **506 × 13** CSV file, where each row represents a residential property in a suburb or town of Boston. It was originally drawn from the **Boston Standard Metropolitan Statistical Area (SMSA) in 1970**.
 
 Each record includes **13 input features** describing property and neighborhood characteristics, and one **target variable**: the median value of owner-occupied homes (in $1000s).
 
@@ -35,6 +35,8 @@ Detailed feature descriptions are listed in the table below:
 | `PTRATIO` | Pupil-teacher ratio by town                                                 |
 | `LSTAT`   | Percentage of lower status population                                       |
 | `MEDV`    | Median value of owner-occupied homes in $1000s (target variable)            |
+
+📌 Note: The Boston Housing dataset has been deprecated in newer versions of scikit-learn due to ethical concerns about the LSTAT variable. It is used here solely for educational purposes.
 
 ## ❓ Problem Statement
 Accurately estimating housing prices is a persistent challenge due to the numerous and often interrelated factors that influence real estate markets — particularly the issue of multicollinearity among predictors. This project aims to develop a linear regression model to predict housing prices in Boston using key features from the dataset. The objective is to minimize prediction error while identifying the most influential variables, offering a foundational, interpretable baseline for housing price modeling and further machine learning applications.
@@ -70,7 +72,7 @@ The linear regression model was evaluated using standard regression metrics on t
 | MAE (Mean Absolute Error)                 | 0.151284          |
 | MAPE (Mean Absolute Percentage Error)     | 5.257965          |
 
-These results indicate that the model explains approximately 73% of the variance in housing prices and has an average error of 23%.
+These results indicate that the model explains approximately 73% of the variance in housing prices and achieves a mean absolute percentage error of approximately 5.26%.
 
 ---
 
@@ -117,7 +119,7 @@ plt.show()
 
 ## 💡 Insights & Recommendations
 - Actionable insights have been derived for each key variable influencing housing prices.
-- Strategic recommendations are provided for stakeholders such as city planners, real estate developers, homeowners, prospective buyers, and realtors to support data-informed decisions.
+- Based on the model results, we provide the following actionable insights for various stakeholders, including urban planners, policymakers, real estate developers, homeowners, and investors.
 
 <a id="technologies-used"></a>
 ## ⚙️ Technologies Used
@@ -133,6 +135,18 @@ plt.show()
 
 <a id="how-to-run"></a>
 ## ▶️ How to Run
-1. Clone the repo  
-2. Install requirements using `pip install -r requirements.txt`  
-3. Run the script with `python main.py`
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/boston-housing-lr.git
+cd boston-housing-lr
+
+# (Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the script
+python main.py
+```
