@@ -12,7 +12,7 @@ This project applies linear regression to forecast Boston housing prices based o
 - [How to Run](#how-to-run)
 
 ## 🧠 Overview
-This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. It models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2R 2 . The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
+This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. It models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2. The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
 
 ## 📊 Dataset
 Description of the Boston housing dataset...
