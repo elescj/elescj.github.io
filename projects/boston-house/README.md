@@ -116,11 +116,20 @@ plt.show()
 ```
 
 ## 💡 Insights & Recommendations
-What did you learn? What actions can be taken?
+- Actionable insights have been derived for each key variable influencing housing prices.
+- Strategic recommendations are provided for stakeholders such as city planners, real estate developers, homeowners, prospective buyers, and realtors to support data-informed decisions.
 
 <a id="technologies-used"></a>
 ## ⚙️ Technologies Used
-List tools and libraries: Python, Pandas, Scikit-learn, etc.
+- **Python** – General purpose programming
+- **Pandas** – Data manipulation and analysis
+- **NumPy** – Numerical computations
+- **Matplotlib & Seaborn** – Data visualization
+- **Scikit-learn** – Model training and evaluation
+- **Statsmodels** – Statistical modeling (OLS regression, VIF)
+- **SciPy** – Statistical tests and probability distributions
+- **Pylab** – Numerical plotting and analysis
+- **Warnings** – For suppressing non-critical output
 
 <a id="how-to-run"></a>
 ## ▶️ How to Run
