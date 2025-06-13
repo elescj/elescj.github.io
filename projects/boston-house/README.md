@@ -103,11 +103,14 @@ To assess the model assumptions and quality of fit, the following plots were ana
 
 ```python
 # Example code (matplotlib)
-plt.scatter(y_test, y_pred)
-plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')
-plt.xlabel("Actual MEDV")
-plt.ylabel("Predicted MEDV")
-plt.title("Actual vs. Predicted Prices")
+# Plot histogram of residuals.
+sns.histplot(residuals, kde=True)
+# Show the plot.
+plt.show()
+# Plot q-q plot of residuals
+stats.probplot(residuals, dist = "norm", plot = pylab)
+# Show the plot.
+plt.show()
 
 
 ## 💡 Insights & Recommendations
