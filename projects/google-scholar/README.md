@@ -12,4 +12,13 @@ This project serves as a valuable foundation for future automation of literature
 
 ## ⚙️ Technologies Used
 
-## ⚙️ Technologies Used
+| Category              | Technology / Library                             | Description                                                                 |
+|-----------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
+| Programming Language  | **Python 3**                                     | Core language used for scripting and automation                            |
+| API - Data Retrieval  | [SerpApi](https://serpapi.com)                   | Retrieves scholarly data from Google Scholar via keyword + date filtering  |
+| API - Metadata Enrich | [Lens.org Scholarly API](https://www.lens.org)  | Adds metadata: abstract, affiliations, fields of study, etc.               |
+| Data Processing       | [pandas](https://pandas.pydata.org/)            | Structures and processes data; converts to DataFrame                       |
+| Excel Export          | [XlsxWriter](https://xlsxwriter.readthedocs.io/) | Exports search results to `.xlsx` files via pandas                         |
+| HTTP Requests         | [requests](https://requests.readthedocs.io/)    | Communicates with APIs via GET and POST requests                           |
+| Date Handling         | [datetime](https://docs.python.org/3/library/datetime.html) | Formats timestamps and parses dates from metadata                |
+| File I/O              | Built-in Python                                  | Saves memo files summarizing search coverage                               |
