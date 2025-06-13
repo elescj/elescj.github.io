@@ -12,13 +12,13 @@ This project applies linear regression to forecast Boston housing prices based o
 - [How to Run](#how-to-run)
 
 ## 🧠 Overview
-This project analyzes the Boston housing dataset to predict housing prices using a linear regression model. By exploring the relationships between various property features and sale prices, the model aims to provide insights into housing market trends and factors affecting prices.
+This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. Leveraging multiple linear regression, it models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2R 2 . The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
 
 ## 📊 Dataset
 Description of the Boston housing dataset...
 
 ## ❓ Problem Statement
-The goal is to accurately predict housing prices in Boston based on available features such as number of rooms, location, and property age. Current market complexities and varied neighborhood characteristics make price estimation challenging, motivating the use of linear regression as a simple predictive tool.
+Estimating house prices accurately is a persistent challenge due to the many factors that influence real estate markets, including property characteristics and neighborhood attributes. This project aims to build a linear regression model that can predict housing prices in Boston based on key variables in the dataset. The objective is to minimize prediction error while interpreting which features have the most impact on price, providing a foundational approach to housing market analysis.
 
 ## 🔎 Methodology
 Steps of data cleaning, model building, evaluation...
