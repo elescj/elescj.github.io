@@ -1,23 +1,41 @@
-# 📌 Predicting Boston Housing Prices: A Linear Regression Approach
-A one-line summary.
-## 📂 Table of Contents
-- [Overview](#overview)
-- [Dataset](#dataset)
-- [Problem Statement](problem-statement)
-- [Methodlogy](methodology)
-- [Results](results)
-- [Insights & Recommendations](insights-&-recommendations)
-- [Technologies Used](technologies-used)
-- [How to Run](how-to-run)
-- [Test TOC](test-toc)
+# Project Name
 
-## 🧠 Overview
-## 📊 Dataset
-## ❓ Problem Statement
-Problem statement
-## 🔎 Methodlogy
-## 📈 Results
-## 💡 Insights & Recommendations
-## ⚙️ Technologies Used
-## ▶️ How to Run
-## Test TOC
+Short project description.
+
+## Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+
+## About
+
+This project is...
+
+## Getting Started
+
+To begin...
+
+## Installation
+
+Step-by-step...
+
+## Usage
+
+How to run...
+
+## Screenshots
+
+![screenshot](image.png)
+
+## Contributing
+
+Guidelines...
+
+## License
+
+MIT © 2025
