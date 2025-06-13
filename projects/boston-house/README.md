@@ -3,12 +3,12 @@
 A one-line summary.
 
 ## 📂 Table of Contents
-- [Overview](#-overview)
-- [Dataset](#-dataset)
-- [Problem Statement](#-problem-statement)
-- [Methodology](#-methodology)
-- [Results](#-results)
-- [Insights & Recommendations](#-insights--recommendations)
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Problem Statement](#problem-statement)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Insights & Recommendations](#insights--recommendations)
 - [Technologies Used](#technologies-used)
 - [How to Run](#how-to-run)
 
