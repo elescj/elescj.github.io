@@ -11,11 +11,11 @@ A one-line summary.
 - [How to Run](how-to-run)
 
 ## Overview
-## 📊 Dataset
-## ❓ Problem Statement
+## Dataset
+## Problem Statement
 Problem statement
-## 🔎 Methodlogy
-## 📈 Results
-## 💡 Insights & Recommendations
-## ⚙️ Technologies Used
-## ▶️ How to Run
+## Methodlogy
+## Results
+## Insights & Recommendations
+## Technologies Used
+## How to Run
