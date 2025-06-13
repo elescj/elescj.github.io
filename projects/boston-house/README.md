@@ -1,6 +1,6 @@
 # 📌 Predicting Boston Housing Prices: A Linear Regression Approach
 
-A one-line summary.
+This project predicts Boston housing price using linear regression.
 
 ## 📂 Table of Contents
 - [Overview](#-overview)
