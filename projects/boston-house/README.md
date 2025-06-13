@@ -32,10 +32,10 @@ How to run...
 
 ![screenshot](image.png)
 
-## Contributing
+## 📌 Contributing
 
 Guidelines...
 
-## License
+## 📌 License
 
 MIT © 2025
