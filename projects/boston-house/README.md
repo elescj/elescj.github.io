@@ -5,4 +5,6 @@
 ## ❓ Problem Statement
 ## 🔎 Methodlogy
 ## 📈 Results
-## 
+## 💡 Insights & Recommendations
+## ⚙️ Technologies Used
+## ▶️ How to Run
