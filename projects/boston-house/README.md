@@ -1,6 +1,5 @@
 # 📌 Predicting Boston Housing Prices: A Linear Regression Approach
-
-This project predicts Boston housing price using linear regression.
+This project applies linear regression to forecast Boston housing prices based on key property features.
 
 ## 📂 Table of Contents
 - [Overview](#-overview)
@@ -13,13 +12,13 @@ This project predicts Boston housing price using linear regression.
 - [How to Run](#how-to-run)
 
 ## 🧠 Overview
-Brief introduction to the project...
+This project analyzes the Boston housing dataset to predict housing prices using a linear regression model. By exploring the relationships between various property features and sale prices, the model aims to provide insights into housing market trends and factors affecting prices.
 
 ## 📊 Dataset
 Description of the Boston housing dataset...
 
 ## ❓ Problem Statement
-Problem statement goes here...
+The goal is to accurately predict housing prices in Boston based on available features such as number of rooms, location, and property age. Current market complexities and varied neighborhood characteristics make price estimation challenging, motivating the use of linear regression as a simple predictive tool.
 
 ## 🔎 Methodology
 Steps of data cleaning, model building, evaluation...
