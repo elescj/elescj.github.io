@@ -44,12 +44,12 @@ The following steps outline the end-to-end process used in this project:
 
 1. **Data Overview**  
    The Boston Housing dataset was loaded into a pandas DataFrame for preliminary inspection. Key characteristics such as data dimensions, data types, presence of duplicates or null values, and the number of unique values per feature were assessed.
-
-2. **Exploratory Data Analysis (EDA)**  
+   
+3. **Exploratory Data Analysis (EDA)**  
    - **Univariate analysis** was conducted to understand the distribution of each feature using histograms and descriptive statistics.  
    - **Bivariate analysis** explored relationships between independent variables and the target (`MEDV`) using scatter plots and correlation heatmaps, helping to identify potential multicollinearity and feature relevance.
 
-3. **Model Building – Linear Regression**  
+4. **Model Building – Linear Regression**  
    - Split the dataset into training and testing sets (typically 80/20).  
    - Examined multicollinearity using correlation matrices and VIF; dropped highly collinear features.  
    - Built an initial linear regression model and evaluated coefficient significance.  
@@ -59,9 +59,54 @@ The following steps outline the end-to-end process used in this project:
    - Applied **k-fold cross-validation** to assess model generalizability.  
    - Constructed the final linear regression model based on refined features and evaluation metrics.
 
-
 ## 📈 Results
-Key performance metrics, accuracy, visuals...
+
+### 🔢 Model Performance Metrics
+The linear regression model was evaluated using standard regression metrics on the test set:
+| Metric                                    | Value             |
+|-------------------------------------------|-------------------|
+| R² Score (Coefficient of Determination)   | 0.729 (+/- 0.232) |
+| RMSE (Root Mean Squared Error)            | 0.198045          |
+| MAE (Mean Absolute Error)                 | 0.151284          |
+| MAPE (Mean Absolute Percentage Error)     | 5.257965          |
+These results indicate that the model explains approximately 73% of the variance in housing prices and has an average error of 23%.
+
+---
+
+### 📊 Model Coefficients
+Below are the learned coefficients for each feature in the model:
+| Feature   | Coefficient | Interpretation (qualitative impact)                   |
+|-----------|-------------|--------------------------------------------------------|
+| const     | 4.649       | Baseline value when all features are 0                |
+| CRIM      | -0.0125     | Higher crime rate slightly decreases housing price    |
+| CHAS      | +0.1198     | Proximity to Charles River slightly increases price   |
+| NOX       | -1.0562     | Higher air pollution (NOx) strongly decreases price   |
+| RM        | +0.0589     | More rooms per dwelling increases price               |
+| DIS       | -0.0441     | Greater distance from employment centers reduces value|
+| RAD       | +0.0078     | Higher accessibility to highways slightly increases price |
+| PTRATIO   | -0.0485     | Higher student–teacher ratio reduces price            |
+| LSTAT     | -0.0293     | Higher % of lower status population decreases price   |
+*Note: The magnitude and sign of coefficients indicate each feature’s relative impact.*
+
+---
+
+### 🧪 Residual Analysis
+To assess the model assumptions and quality of fit, the following plots were analyzed:
+- ✅ **Residuals vs. Fitted Values** (for linearity & homoscedasticity)
+- ✅ **Histogram of Residuals** (for normality)
+- ✅ **QQ Plot** (for distribution shape)
+- ✅ **Actual vs. Predicted** plot (for overall fit)
+
+<sub>Add charts here if using Jupyter or image links:</sub>
+
+```python
+# Example code (matplotlib)
+plt.scatter(y_test, y_pred)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red')
+plt.xlabel("Actual MEDV")
+plt.ylabel("Predicted MEDV")
+plt.title("Actual vs. Predicted Prices")
+
 
 ## 💡 Insights & Recommendations
 What did you learn? What actions can be taken?
