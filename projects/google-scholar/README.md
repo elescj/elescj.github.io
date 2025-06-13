@@ -14,7 +14,7 @@ This project serves as a valuable foundation for future automation of literature
 
 | Category              | Technology / Library                             | Description                                                                 |
 |-----------------------|--------------------------------------------------|-----------------------------------------------------------------------------|
-| Programming Language  | **Python 3**                                     | Core language used for scripting and automation                            |
+| Programming Language  | **Python 3.11**                                     | Core language used for scripting and automation                            |
 | API - Data Retrieval  | [SerpApi](https://serpapi.com)                   | Retrieves scholarly data from Google Scholar via keyword + date filtering  |
 | API - Metadata Enrich | [Lens.org Scholarly API](https://www.lens.org)  | Adds metadata: abstract, affiliations, fields of study, etc.               |
 | Data Processing       | [pandas](https://pandas.pydata.org/)            | Structures and processes data; converts to DataFrame                       |
