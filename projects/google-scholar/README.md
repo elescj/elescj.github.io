@@ -11,3 +11,5 @@ To address this, I developed a Python script that automates the repetitive task 
 This project serves as a valuable foundation for future automation of literature mining processes. It also provided me with hands-on experience in acquiring and managing API licenses, as well as a deeper understanding of how to work with scholarly data programmatically.
 
 ## ⚙️ Technologies Used
+
+## ⚙️ Technologies Used
