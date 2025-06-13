@@ -15,9 +15,11 @@ This project applies linear regression to forecast Boston housing prices based o
 This project implements a supervised learning pipeline to predict housing prices in the Boston metropolitan area using the classic Boston Housing dataset. It models the relationship between housing prices and a range of explanatory variables including crime rate, average number of rooms, accessibility to highways, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature selection, model training, and evaluation using regression metrics such as RMSE and 𝑅2. The objective is to assess the effectiveness of linear regression in modeling continuous housing price data and to interpret the influence of individual predictors on pricing outcomes.
 
 ## 📊 Dataset
-The data and problem is provided by Applied Data Science Program by MIT. The dataset is a 506 × 13 csv file. Each record in the database describes a house in Boston suburb or town. The data was drawn from the Boston Standard Metropolitan Statistical Area (SMSA) in 1970. Detailed attribute information can be found below:
+The data and problem were provided by the Applied Data Science Program by MIT. The dataset is a 506 × 13 CSV file, where each row represents a residential property in a suburb or town of Boston. It was originally drawn from the Boston Standard Metropolitan Statistical Area (SMSA) in 1970.
 
-Attribute Information:
+Each record includes 13 input features describing property and neighborhood characteristics, and one target variable: the median value of owner-occupied homes (in $1000s).
+
+Detailed feature descriptions are listed in the table below:
 | Feature   | Description                                                                 |
 |-----------|-----------------------------------------------------------------------------|
 | `CRIM`    | Per capita crime rate by town                                               |
