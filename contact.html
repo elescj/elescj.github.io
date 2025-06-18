@@ -1,137 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Jiaology of Datanova</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 40px;
-      background-color: #0b0c10; /* deep space */
-      color: #cbd3ec; /* soft star-white */
-      line-height: 1.6;
-    }
+.contact-image {
+  width: 300px;
+  height: auto;
+  margin-right: 10px; /* reduced from 20px */
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2e3d59;
+}
 
-    nav {
-      margin-bottom: 30px;
-      background: linear-gradient(90deg, #1f1f2e, #2d2d44);
-      padding: 12px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #2e3d59;
-    }
-
-    nav a {
-      margin: 0 20px;
-      text-decoration: none;
-      color: #8ecaff; /* starlight blue */
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #e0b3ff; /* violet-white */
-      text-shadow: 0 0 5px #e0b3ff;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #ffffff;
-      text-shadow: 0 0 10px #8ecaff;
-    }
-
-    a {
-      color: #8ecaff;
-    }
-
-    a:hover {
-      color: #ffdbff;
-      text-shadow: 0 0 8px #ffdbff;
-    }
-
-    .content-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .contact-image {
-      width: 300px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #2e3d59;
-    }
-
-    .contact-form {
-      background-color: #1f1f2e;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #2e3d59;
-      width: calc(100% - 320px); /* Adjust width based on image width + margin */
-      max-width: 400px; /* Max width for responsiveness */
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      font-size: 1em;
-      background-color: #2d2d44;
-      color: #cbd3ec;
-    }
-
-    button {
-      background-color: #8ecaff;
-      color: #0b0c10;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #e0b3ff;
-      color: #0b0c10;
-      text-shadow: 0 0 5px #fff;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="projects.html">PROJECTS</a>
-    <a href="contact.html">CONTACT</a>
-  </nav>
-  <h1>Contact</h1>
-  
-  <!-- Content Container for Image and Form -->
-  <div class="content-container">
-    <img class="contact-image" src="contact.jpg" alt="Contact me">
-    
-    <!-- Inquiry Form -->
-    <form class="contact-form" action="https://formspree.io/f/xzzgrnnk" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" name="name" required><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" name="email" required><br>
-
-      <label for="message">Message:</label><br>
-      <textarea name="message" rows="4" required></textarea><br>
-
-      <button type="submit">Send</button>
-    </form>
-  </div>
-
-  <p>
-    <a href="https://www.linkedin.com/in/cjxvi" target="_blank">LINKEDIN</a> |
-    <a href="https://x.com/elescjxvi" target="_blank">X</a>
-  </p>
-</body>
-</html>
+.contact-form {
+  background-color: #1f1f2e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2e3d59;
+  width: calc(100% - 310px); /* adjusted to reflect narrower margin */
+  max-width: 400px;
+}
