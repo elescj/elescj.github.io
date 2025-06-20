@@ -43,13 +43,3 @@ h1 {
   box-shadow: 0 0 10px #2e3d59;
   margin-bottom: 30px;
 }
-
-.banner2 {
-  height: 400px;
-  background-image: url('jupyter.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #2e3d59;
-  margin-bottom: 30px;
-}
